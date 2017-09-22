@@ -114,7 +114,7 @@ object Inserter {
       |CREATE TABLE example (
       |  unique     STRING(MAX) NOT NULL,
       |  time       TIMESTAMP NOT NULL,
-      |  time         STRING(MAX) NOT NULL,
+      |  sz         STRING(MAX) NOT NULL,
       |  ps         STRING(MAX) NOT NULL,
       |  rad        INT64 NOT NULL,
       |  num1       INT64 NOT NULL,
@@ -204,7 +204,7 @@ object Inserter {
   private def buildExample(sz: String, ps: String, rad: Long, unique: String, epoch: Long, num1: Int, num2: Int): Example =
     Example (
       unique = unique,
-      time   = BqDateTimeFormat.format(ZonedDateTime.ofInstant(Instant.ofEpochSecond(epoch), ZoneId.of("UTC"))),
+      time   = BqDateTimeFormat.format(ZonedDateTime.ofInstant(Instant.ofEpochSecond(epoch), zone)),
       sz     = sz,
       ps     = ps,
       rad    = rad,

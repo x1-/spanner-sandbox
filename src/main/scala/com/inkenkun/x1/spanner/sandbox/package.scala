@@ -12,7 +12,7 @@ package object sandbox {
   implicit val customConfig: Configuration          = Configuration.default.withSnakeCaseKeys
   implicit val encoder:      ObjectEncoder[Example] = deriveEncoder
 
-  val BqDateTimeFormat: DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss VV")
+  val BqDateTimeFormat     : DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss VV")
 
   case class Example (
     unique: String,
